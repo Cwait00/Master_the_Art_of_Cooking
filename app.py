@@ -44,9 +44,11 @@ print(app.config['SECRET_KEY'])
 # Output: '218428b7cb03dd38eb995131a64b4f640a6ec844b6144ea0'
 print(app.config['DATABASE_URI'])  
 # Output: 'mysql://root:thenjiwe24@172.17.0.15:3306/mysql'
-print(app.config['API_KEY'])       # Output: 'your_api_key'
+print(app.config['API_KEY'])       #
 
-# Add more routes and logic as needed
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run()
