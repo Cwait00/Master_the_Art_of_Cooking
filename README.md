@@ -27,3 +27,7 @@ Fork the repository and create a new branch for your feature or bug fix.
 Make your changes and ensure that the code passes all tests.
 Submit a pull request with a clear description of your changes and why they 
 are necessary.
+
+License
+
+MIT License
