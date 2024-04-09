@@ -4,14 +4,11 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 
-# Initialize Flask application
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Initialize SQLAlchemy database
 db = SQLAlchemy(app)
 
-# Defines the Recipe model
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -25,17 +22,17 @@ def index():
 @app.route('/add_recipe', methods=['POST'])
 def add_recipe():
     try:
-        # Retrieves recipe data from request
+
         data = request.get_json()
         title = data['title']
         cuisine = data['cuisine']
         difficulty = data['difficulty']
 
-        # Create new recipe object
+
         new_recipe = Recipe(title=title, cuisine=cuisine,
                 difficulty=difficulty)
 
-        # Add new recipe to the database
+
         db.session.add(new_recipe)
         db.session.commit()
 
@@ -50,5 +47,5 @@ def about():
     return render_template('about.html')
 
 if __name__ == '__main__':
-    # Ensures debug mode is turned off in production
+
     app.run(debug=False)
