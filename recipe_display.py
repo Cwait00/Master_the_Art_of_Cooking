@@ -16,7 +16,7 @@ def display_recipe(recipe):
         print(f"- {review}")
 
 if __name__ == "__main__":
-    # Example recipe data
+
     recipe = {
         'title': 'Spaghetti Carbonara',
         'cuisine': 'Italian',
@@ -41,5 +41,4 @@ if __name__ == "__main__":
         ]
     }
 
-    # Display the recipe
     display_recipe(recipe)

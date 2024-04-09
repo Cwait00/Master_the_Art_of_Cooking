@@ -7,12 +7,6 @@
 *.o
 *.so
 
-# Packages #
-############
-# It's not necessary to check in these files unless we're working in an
-# environment where these can't be readily installed using tools like pip
-# (e.g., environments where internet access is restricted).
-
 # Virtual environments #
 ########################
 # Python
